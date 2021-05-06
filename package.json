@@ -1,0 +1,20 @@
+{
+  "name": "cursocypres",
+  "version": "1.0.0",
+  "description": "curso de cypress",
+  "main": "index.js",
+  "scripts": {
+    "test": "cypress run"
+  },
+  "keywords": [
+    "cypress",
+    "test",
+    "automotion",
+    "e2e"
+  ],
+  "author": "\"Rafael Amorim\"",
+  "license": "ISC",
+  "dependencies": {
+    "cypress": "^7.2.0"
+  }
+}
