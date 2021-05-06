@@ -1,12 +1,12 @@
 /// <reference types="cypress"/>
 
 describe('tickets', () => {
-  beforeEach(()=>{cy.visit("http://bit.ly/2XSuwCW")})
+  beforeEach(() => { cy.visit("http://bit.ly/2XSuwCW") })
   it('confimando pagina de ticket box', () => {
     cy.get('h1').should('contain', 'TICKETBOX')
   });
 
-  it("preencher todos os campos inputs", ()=> {
+  it("preencher todos os campos inputs", () => {
     const firsName = "rafael"
     cy.get('#first-name').type(`${firsName}`);
     cy.get('#last-name').type('souza');
@@ -16,9 +16,23 @@ describe('tickets', () => {
 
   })
 
-  it.only('selecionado opções do ticket', () => {
+  it('selecionado opções do ticket', () => {
     //cy.get('p').should("contain", 'I, , wish to buy 1 General Admission tickets. I understand that all ticket sales are final.')
     cy.get('#ticket-quantity').select("3");
     //cy.get('p').should("contain", "I, , wish to buy 3 General Admission tickets. I understand that all ticket sales are final.")
   });
+
+  it.only('interagino com radio buttons', () => {
+    cy.get('#vip').check();
+  });
+
+  it.only('selelecionado o checkbox', () => {
+    cy.get('#social-media').check();
+    cy.get('#publication').check();
+  });
+  it.only('selecionando mais de checkbox', () => {
+    cy.get('#friend').check();
+    cy.get('#publication').uncheck();
+  });
+
 });
