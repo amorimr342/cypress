@@ -6,7 +6,7 @@ describe('tickets', () => {
     cy.get('h1').should('contain', 'TICKETBOX')
   });
 
-  it.only("preencher todos os campos inputs", ()=> {
+  it("preencher todos os campos inputs", ()=> {
     const firsName = "rafael"
     cy.get('#first-name').type(`${firsName}`);
     cy.get('#last-name').type('souza');
@@ -15,4 +15,10 @@ describe('tickets', () => {
     cy.get('#signature').type(firsName);
 
   })
+
+  it.only('selecionado opções do ticket', () => {
+    //cy.get('p').should("contain", 'I, , wish to buy 1 General Admission tickets. I understand that all ticket sales are final.')
+    cy.get('#ticket-quantity').select("3");
+    //cy.get('p').should("contain", "I, , wish to buy 3 General Admission tickets. I understand that all ticket sales are final.")
+  });
 });
