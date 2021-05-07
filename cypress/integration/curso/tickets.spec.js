@@ -22,17 +22,33 @@ describe('tickets', () => {
     //cy.get('p').should("contain", "I, , wish to buy 3 General Admission tickets. I understand that all ticket sales are final.")
   });
 
-  it.only('interagino com radio buttons', () => {
+  it('interagino com radio buttons', () => {
     cy.get('#vip').check();
   });
 
-  it.only('selelecionado o checkbox', () => {
+  it('selelecionado o checkbox', () => {
     cy.get('#social-media').check();
     cy.get('#publication').check();
   });
-  it.only('selecionando mais de checkbox', () => {
+  it('selecionando mais de checkbox', () => {
     cy.get('#friend').check();
     cy.get('#publication').uncheck();
   });
 
+  it('verificando ticketbox', () => {
+    cy.get('header h1').should("contain","TICKETBOX");
+  });
+  it.only('alerts on invalid email', () => {
+    cy.get("#email")
+      .as("email")
+      .type("amorimr342.com");
+
+    cy.get("#email.invalid")
+      .as("emailInvalid")
+      .should("exist");
+
+    cy.get("@email").clear().type("test@test.com");
+    cy.get("#email.invalid").should("not.exist");
+
+  });
 });
