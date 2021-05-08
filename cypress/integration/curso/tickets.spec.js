@@ -101,6 +101,7 @@ describe('tickets', () => {
         cy.get("#agree").uncheck();
 
         cy.get("@submitButton").should("be.disabled");
+        
   });
 
 

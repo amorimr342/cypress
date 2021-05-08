@@ -1,4 +1,3 @@
 cypress/screenshots/
 cypress/videos/
 node_modules/
-/cypress/integration/curso/git.spec.js
